@@ -306,8 +306,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/ktextaddons/ktextaddons-1.9.0.tar.xz",
-                    "sha256": "053bcf84e45c141042186a9115a8dd51a7262802fe9547745e44b419015b9694",
+                    "url": "https://download.kde.org/stable/ktextaddons/ktextaddons-1.9.1.tar.xz",
+                    "sha256": "366d5a94c7405482c3a6d261347c1b995de73a087059996b117d612bfc1291c2",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 351168,
@@ -570,8 +570,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.10.tgz",
-                            "sha256": "c065f04aad42737aebd60b2fe4939704ac844266bc0aeaa1609f0cad987be516",
+                            "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.12.tgz",
+                            "sha256": "1716ad779e85d743694c3e3b05277fb71b6a5eadca43c7a958aa62683b22208e",
                             "x-checker-data": {
                                 "type": "html",
                                 "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/",
