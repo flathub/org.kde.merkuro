@@ -9,6 +9,7 @@
         "org.freedesktop.Sdk.Extension.rust-stable"
     ],
     "command": "run_merkuro.sh",
+    "copy-icon": true,
     "finish-args": [
         "--device=dri",
         "--env=SASL_PATH=/app/lib/sasl2",
@@ -42,6 +43,7 @@
         "/include",
         "/docs",
         "/mkspecs",
+        "/share/doc",
         "/share/man",
         "/bin/afmtodit",
         "/usr/bin/xsd",
@@ -50,7 +52,9 @@
         "*.a",
         "*.la"
     ],
-    "copy-icon": true,
+    "cleanup-commands": [
+        "/app/cleanup-BaseApp.sh"
+    ],
     "modules": [
         {
             "name": "libetebase",
