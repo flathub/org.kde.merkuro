@@ -197,6 +197,7 @@
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
                 "-DBUILD_TOOLS=OFF",
+		"-BUILD_PYTHON_BINDINGS=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DDATABASE_BACKEND=SQLITE"
             ],
@@ -240,6 +241,7 @@
             "name": "akonadi-mime",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
+		"-BUILD_PYTHON_BINDINGS=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ],
             "buildsystem": "cmake-ninja",
@@ -405,6 +407,7 @@
             "name": "akonadi-contacts",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
+		"-BUILD_PYTHON_BINDINGS=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ],
             "buildsystem": "cmake-ninja",
@@ -797,6 +800,7 @@
             "name": "akonadi-calendar",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
+		"-BUILD_PYTHON_BINDINGS=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ],
             "buildsystem": "cmake-ninja",
