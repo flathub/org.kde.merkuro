@@ -197,7 +197,7 @@
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
                 "-DBUILD_TOOLS=OFF",
-		"-BUILD_PYTHON_BINDINGS=OFF",
+		"-DBUILD_PYTHON_BINDINGS=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DDATABASE_BACKEND=SQLITE"
             ],
@@ -241,7 +241,7 @@
             "name": "akonadi-mime",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
-		"-BUILD_PYTHON_BINDINGS=OFF",
+		"-DBUILD_PYTHON_BINDINGS=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ],
             "buildsystem": "cmake-ninja",
@@ -294,6 +294,27 @@
                         "project-id": 1239,
                         "stable-only": true,
                         "url-template": "https://gnupg.org/ftp/gcrypt/gpgme/gpgme-$version.tar.bz2"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "gpgmepp",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://gnupg.org/ftp/gcrypt/gpgmepp/gpgmepp-2.2.0.tar.bz2",
+                    "sha256": "6651c5f7f801543d5b676719df9fec8053b0a6f5aba40b98ca0d2bee11136f30",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 229021,
+                        "stable-only": true,
+                        "url-template": "https://gnupg.org/ftp/gcrypt/gpgmepp/gpgmepp-$version.tar.bz2"
                     }
                 }
             ]
@@ -407,7 +428,7 @@
             "name": "akonadi-contacts",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
-		"-BUILD_PYTHON_BINDINGS=OFF",
+		"-DBUILD_PYTHON_BINDINGS=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ],
             "buildsystem": "cmake-ninja",
@@ -800,7 +821,7 @@
             "name": "akonadi-calendar",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
-		"-BUILD_PYTHON_BINDINGS=OFF",
+		"-DBUILD_PYTHON_BINDINGS=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ],
             "buildsystem": "cmake-ninja",
@@ -1066,27 +1087,6 @@
                         "project-id": 8763,
                         "stable-only": true,
                         "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadiconsole-$version.tar.xz"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "kmbox",
-            "config-opts": [
-                "-DBUILD_TESTING=OFF",
-                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-            ],
-            "buildsystem": "cmake-ninja",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/26.08.1/src/kmbox-26.08.1.tar.xz",
-                    "sha256": "4bda0a789e010d383db7a56294941853cc2d878ddd57b33f1e08daeb2714a75b",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kmbox-$version.tar.xz"
                     }
                 }
             ]
