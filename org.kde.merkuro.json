@@ -1,9 +1,9 @@
 {
     "id": "org.kde.merkuro",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.10",
+    "runtime-version": "6.11",
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "6.10",
+    "base-version": "6.11",
     "sdk": "org.kde.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -198,7 +198,8 @@
                 "-DBUILD_TESTING=OFF",
                 "-DBUILD_TOOLS=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-                "-DDATABASE_BACKEND=SQLITE"
+                "-DDATABASE_BACKEND=SQLITE",
+                "-DBUILD_PYTHON_BINDINGS=OFF"
             ],
             "buildsystem": "cmake-ninja",
             "sources": [
@@ -240,6 +241,7 @@
             "name": "akonadi-mime",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
+                "-DBUILD_PYTHON_BINDINGS=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ],
             "buildsystem": "cmake-ninja",
@@ -285,13 +287,34 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gnupg.org/ftp/gcrypt/gpgme/gpgme-2.0.1.tar.bz2",
-                    "sha256": "821ab0695c842eab51752a81980c92b0410c7eadd04103f791d5d2a526784966",
+                    "url": "https://gnupg.org/ftp/gcrypt/gpgme/gpgme-2.2.0.tar.bz2",
+                    "sha256": "7160e80e84dafd00d956c84891c533bb7ab16a6a54fbe1574b2f3acf0496977b",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1239,
                         "stable-only": true,
                         "url-template": "https://gnupg.org/ftp/gcrypt/gpgme/gpgme-$version.tar.bz2"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "gpgmepp",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://gnupg.org/ftp/gcrypt/gpgmepp/gpgmepp-2.2.0.tar.xz",
+                    "sha256": "6651c5f7f801543d5b676719df9fec8053b0a6f5aba40b98ca0d2bee11136f30",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 229021,
+                        "stable-only": true,
+                        "url-template": "https://gnupg.org/ftp/gcrypt/gpgmepp/gpgmepp-$version.tar.xz"
                     }
                 }
             ]
@@ -343,13 +366,14 @@
             "buildsystem": "cmake-ninja",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
-                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DBUILD_WITH_QT5=OFF"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gnupg.org/ftp/gcrypt/qgpgme/qgpgme-2.0.0.tar.xz",
-                    "sha256": "15645b2475cca6118eb2ed331b3a8d9442c9d4019c3846ba3f6d25321b4a61ad",
+                    "url": "https://gnupg.org/ftp/gcrypt/qgpgme/qgpgme-2.2.0.tar.xz",
+                    "sha256": "3c6290ff5bfeab981bb48b2951703761f1dbea640cb637beb3560d5fefb0e0b3",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 378538,
@@ -405,6 +429,7 @@
             "name": "akonadi-contacts",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
+                "-DBUILD_PYTHON_BINDINGS=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ],
             "buildsystem": "cmake-ninja",
@@ -623,6 +648,12 @@
         },
         {
             "name": "akonadi-search",
+            "build-options": {
+                "append-path": "/usr/lib/sdk/rust-stable/bin",
+                "env": {
+                    "CARGO_NET_OFFLINE": "true"
+                }
+            },
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
@@ -640,7 +671,8 @@
                         "stable-only": true,
                         "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-search-$version.tar.xz"
                     }
-                }
+                },
+                "akonadi-search-dependencies-cargo-generator.json"
             ]
         },
         {
@@ -797,6 +829,7 @@
             "name": "akonadi-calendar",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
+                "-DBUILD_PYTHON_BINDINGS=OFF",
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ],
             "buildsystem": "cmake-ninja",
